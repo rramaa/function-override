@@ -1,0 +1,9 @@
+{
+  "name": "function-override",
+  "version": "1.0.0",
+  "description": "A basic utility to override some functions",
+  "main": "index.js",
+  "repository": "https://github.com/rramaa/function-override",
+  "author": "Ramakrishna",
+  "license": "MIT"
+}
