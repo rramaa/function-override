@@ -1,16 +1,21 @@
 {
   "name": "function-override",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A basic utility to override some functions",
+  "keywords": [
+    "function",
+    "function-hooks",
+    "function-override",
+    "override",
+    "hooks"
+  ],
   "main": "index.js",
   "repository": "https://github.com/rramaa/function-override",
   "author": "Ramakrishna",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "babel index.js --out-dir dist",
+    "build": "babel function-override.js --out-file index.js",
+    "dev": "babel --watch function-override.js --out-file index.js",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
