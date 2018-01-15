@@ -14,6 +14,11 @@ function _callFunc(self, obj, args){
     }
 }
 
+/**
+ * @param {object}         self                 The context in which the function is executed
+ * @param {function}       functionToReplace    The function which should be replaced
+ * @param {options}        options              Options
+ */
 function overrideFunction(self, functionToReplace, {before, after}) {
     const oldFunc = self[functionToReplace]
     if(typeof oldFunc !== 'function'){
@@ -32,11 +37,11 @@ if(typeof module !== 'undefined' && module.exports){
     module.exports = overrideFunction
 } else if (typeof define === 'function' && define.amd) {
     define(function () {
-        return config;
-    });
+        return overrideFunction
+    })
 } else {
     global = (function () {
-        return this || (0, eval)('this');
-    }());
+        return this || (0, eval)('this')
+    }())
     global.overrideFunction = overrideFunction
 }
